@@ -3,7 +3,13 @@ import React from "react";
 
 const Categories = () => {
   return (
-    <ScrollView>
+    <ScrollView 
+    contentContainerStyle={{}}
+    horizontal
+    showsHorizontalScrollIndicator={false}//не хочу показывать горизноталь индикатор
+    >
+    {/*горизонтальная прокрутка */}
+    {/*CategoryCard */}
     <Text>categories</Text>
     </ScrollView>//скрол прокрутки
    
