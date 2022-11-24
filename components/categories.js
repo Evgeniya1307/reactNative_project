@@ -1,20 +1,30 @@
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, Text} from "react-native";
 import React from "react";
+import CategoryCard from "./CategoryCard";
 
 const Categories = () => {
   return (
     <ScrollView 
-    contentContainerStyle={{}}
     horizontal
-    showsHorizontalScrollIndicator={false}//не хочу показывать горизноталь индикатор
-    >
-    {/*горизонтальная прокрутка */}
+    showsHorizontalScrollIndicator={false}
+    contentContainerStyle={{
+        paddingHorizontal:15,
+        paddingTop:10,
+    }}>
     {/*CategoryCard */}
-    <Text>categories</Text>
-    </ScrollView>//скрол прокрутки
-   
-     
-    
+    <Text>
+    <CategoryCard 
+    imgUrl='https://links.papareact.com/wru'
+     title="Testing 1"/> {/*передала пропсы */}
+    <CategoryCard 
+    imgUrl='https://links.papareact.com/wru' 
+    title="Testing 2"/>
+    <CategoryCard 
+    imgUrl='https://links.papareact.com/wru' 
+    title="Testing 3"
+    />
+    </Text>
+    </ScrollView> 
   );
 };
 

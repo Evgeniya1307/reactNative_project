@@ -1,14 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {Text,  TouchableOpacity,Image, View } from 'react-native';
+import React from 'react';
 
-const CategoryCard = () => {
+const CategoryCard = ({imgUrl, title}) => { //вытянула
   return (
-    <View>
-      <Text>CategoryCard</Text>
-    </View>
+    <TouchableOpacity className=" relative mr-2">{/*сенсорная кнопка когда прикоснусь непрозрачность изменится */}
+<Image source={{uri:imgUrl}}
+className="h-20 w-20 rounded"
+/>
+    <Text className="absolute bottom-1 left-1 text-white font-bold">
+    {title}</Text>
+</TouchableOpacity>
   )
 }
 
-export default CategoryCard
-
-const styles = StyleSheet.create({})
+export default CategoryCard;

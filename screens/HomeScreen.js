@@ -7,10 +7,10 @@ import {UserIcon,
   AdjustmentsVerticalIcon } 
   from 'react-native-heroicons/outline';
 import Categories from '../components/Categories';
+import FeaturedRow from '../components/FeaturedRow';
 
 const HomeScreen = () => {
   const navigation=useNavigation()//доступ к навигации
-  
   useLayoutEffect(() => {
     navigation.setOptions({ //меняет варианты навигации
       headerShown:false,//не показывать заголовок
@@ -54,6 +54,28 @@ const HomeScreen = () => {
 <Categories/>
 
       {/*Featured Rows */}
+<FeaturedRow
+id="123"
+title="Featured"
+description="Paid placements from our partners" //описание
+featuredCategory = "featured" 
+/>
+
+<FeaturedRow
+id="1234"
+title="Tasty Discounts"
+description="Everyone's been enjoying these juicy discounts!" //описание
+featuredCategory = "discounts" 
+/>
+
+<FeaturedRow
+id="12345"
+title="Offers near you"
+description="Why not support your local restaraunt tonight" //описание
+featuredCategory = "offers" 
+/>
+
+
       </ScrollView>
       </SafeAreaView>
   )
