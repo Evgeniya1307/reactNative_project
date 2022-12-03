@@ -8,18 +8,31 @@ import {UserIcon,
   from 'react-native-heroicons/outline';
 import Categories from '../components/Categories';
 import FeaturedRow from '../components/FeaturedRow';
+import sanityClient from '../sanity'
+
 
 const HomeScreen = () => {
   const navigation=useNavigation()//доступ к навигации
+  const [featuredCategories, setFeaturedCategories]=React.useState([])
   useLayoutEffect(() => {
     navigation.setOptions({ //меняет варианты навигации
       headerShown:false,//не показывать заголовок
     })
     },[]
   )
+
+  React.useEffect(()=>{
+sanityClient.fetch(`
+*[_type=='featured']
+..., restaraunts[]=>{
+  ..., dishes[]=>
+}`).then(data=>{
+  setFeaturedCategories(data)
+})
+  },[])
   
   return (
-    <SafeAreaView className="bg-white pt-5">{/*безопасная зона */}
+    <SafeAreaView className="bg-white pt-5">{/*безопасная зона выделила*/}
       {/*Header */}
       <View className="flex-row pb-3 items-center mx-4 space-x-2 ">
       <Image source={{uri:'https://links.papareact.com/wru'}}
