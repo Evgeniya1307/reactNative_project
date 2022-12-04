@@ -3,7 +3,7 @@ import React from 'react';
 
 const CategoryCard = ({imgUrl, title}) => { //вытянула
   return (
-    <TouchableOpacity className=" relative mr-2">{/*сенсорная кнопка когда прикоснусь непрозрачность изменится */}
+    <TouchableOpacity className=" relative mr-2">{/*сенсорная кнопка когда прикоснусь будет как непрозрачность изменится */}
 <Image source={{uri:imgUrl}}
 className="h-20 w-20 rounded"
 />
